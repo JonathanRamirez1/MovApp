@@ -52,7 +52,7 @@ dependencies {
 
     //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     //Room
     implementation 'android.arch.persistence.room:runtime:1.1.1'
@@ -64,14 +64,17 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 
     //Dagger Hilt
-    implementation "com.google.dagger:hilt-android:2.33-beta"
-    kapt "com.google.dagger:hilt-android-compiler:2.33-beta"
+    implementation "com.google.dagger:hilt-android:2.40.5"
+    kapt "com.google.dagger:hilt-android-compiler:2.40.5"
 
     //Google Gson
-    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.google.code.gson:gson:2.8.9'
 
     //OkHttp
     implementation(platform("com.squareup.okhttp3:okhttp-bom:4.9.3"))
     implementation("com.squareup.okhttp3:okhttp")
     implementation("com.squareup.okhttp3:logging-interceptor")
+
+    //Lottie
+    implementation 'com.airbnb.android:lottie:3.4.1'
 }

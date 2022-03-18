@@ -10,6 +10,7 @@
     <color name="colorPrimary">#3D5AFE</color>
     <color name="colorPrimaryLight">#8187FF</color>
     <color name="colorPrimaryDark">#0031CA</color>
-    <color name="colorText">#FFFFFF</color>
+    <color name="colorTextWhite">#FFFFFF</color>
+    <color name="colorTextBlack">#000000</color>
 
 </resources>
