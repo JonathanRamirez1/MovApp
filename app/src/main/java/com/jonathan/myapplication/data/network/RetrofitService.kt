@@ -1,7 +1,6 @@
 package com.jonathan.myapplication.data.network
 
 import com.jonathan.myapplication.data.model.MoviesResponse
-import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -13,5 +12,5 @@ interface RetrofitService {
     }
 
     @GET("movie/popular")
-    fun getDataFromApi(@Query("api_key")query: String?): Response<MoviesResponse>
+    suspend fun getDataFromApi(@Query("api_key")query: String?): Response<MoviesResponse>
 }

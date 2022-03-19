@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.jonathan.myapplication.R
 import com.jonathan.myapplication.data.model.Movie
 import com.jonathan.myapplication.databinding.ActivityHomeBinding
@@ -12,29 +13,35 @@ import com.jonathan.myapplication.ui.view.adapters.HomeAdapter
 import com.jonathan.myapplication.ui.view.adapters.RecyclerViewHomeClickListener
 import com.jonathan.myapplication.ui.viewmodel.HomeViewModel
 import com.jonathan.myapplication.util.Resource
+import com.jonathan.myapplication.util.contentView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity(), RecyclerViewHomeClickListener {
 
-    private lateinit var binding: ActivityHomeBinding
-
+    private val binding: ActivityHomeBinding by contentView(R.layout.activity_home)
     private val homeViewModel: HomeViewModel by viewModels()
-    private val homeAdapter: HomeAdapter by lazy { HomeAdapter( this) }
+    private lateinit var homeAdapter: HomeAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHomeBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
         binding.run {
             recyclerviewMovies.apply {
-                adapter = homeAdapter
+                setHomeAdapter()
             }
         }
 
         homeViewModel.getPopular(resources.getString(R.string.api_key))
         setObservers()
+    }
+
+    private fun setHomeAdapter() {
+        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        binding.recyclerviewMovies.layoutManager = layoutManager
+        homeAdapter = HomeAdapter(this@HomeActivity)
+        binding.recyclerviewMovies.setHasFixedSize(true)
+        binding.recyclerviewMovies.adapter = homeAdapter
     }
 
     private fun setObservers() {
