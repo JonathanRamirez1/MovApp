@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "movies")
-class RepositoryData() : Parcelable {
+class Movie() : Parcelable {
 
     @SerializedName("poster_path")
     var posterPath: String? = null
@@ -85,12 +85,12 @@ class RepositoryData() : Parcelable {
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<RepositoryData> {
-        override fun createFromParcel(parcel: Parcel): RepositoryData {
-            return RepositoryData(parcel)
+    companion object CREATOR : Parcelable.Creator<Movie> {
+        override fun createFromParcel(parcel: Parcel): Movie {
+            return Movie(parcel)
         }
 
-        override fun newArray(size: Int): Array<RepositoryData?> {
+        override fun newArray(size: Int): Array<Movie?> {
             return arrayOfNulls(size)
         }
     }

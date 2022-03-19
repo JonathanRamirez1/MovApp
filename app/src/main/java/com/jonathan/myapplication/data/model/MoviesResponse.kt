@@ -4,13 +4,13 @@ import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
-class Movies(): Parcelable {
+class MoviesResponse(): Parcelable {
 
     @SerializedName("page")
     var page = 0
 
     @SerializedName("results")
-    var movies: List<Movies>? = null
+    var movies: List<Movie>? = null
 
     @SerializedName("total_results")
     var totalResults = 0
@@ -34,12 +34,12 @@ class Movies(): Parcelable {
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<Movies> {
-        override fun createFromParcel(parcel: Parcel): Movies {
-            return Movies(parcel)
+    companion object CREATOR : Parcelable.Creator<MoviesResponse> {
+        override fun createFromParcel(parcel: Parcel): MoviesResponse {
+            return MoviesResponse(parcel)
         }
 
-        override fun newArray(size: Int): Array<Movies?> {
+        override fun newArray(size: Int): Array<MoviesResponse?> {
             return arrayOfNulls(size)
         }
     }
