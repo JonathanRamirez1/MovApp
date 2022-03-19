@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -11,7 +10,7 @@
 
         <variable
             name="doc"
-            type="com.jonathan.myapplication.data.model.Movie" />
+            type="com.jonathan.myapplication.data.model.Movies" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -20,10 +19,7 @@
         android:layout_margin="10dp"
         android:adjustViewBounds="true"
         android:onClick="@{clickListener}"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:cardCornerRadius="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,9 +44,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="@{doc.originalTitle}"
-                    android:textStyle="bold"
-                    tools:layout_editor_absoluteX="187dp"
-                    tools:layout_editor_absoluteY="51dp" />
+                    android:textStyle="bold" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
@@ -58,8 +52,7 @@
                     android:layout_marginTop="20dp"
                     android:gravity="center"
                     android:maxLines="5"
-                    android:text="@{doc.overview}"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    android:text="@{doc.overview}" />
 
             </LinearLayout>
 

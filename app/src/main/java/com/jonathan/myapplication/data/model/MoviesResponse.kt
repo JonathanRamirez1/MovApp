@@ -10,7 +10,7 @@ class MoviesResponse(): Parcelable {
     var page = 0
 
     @SerializedName("results")
-    var movies: List<Movie>? = null
+    var movies: List<Movies>? = null
 
     @SerializedName("total_results")
     var totalResults = 0

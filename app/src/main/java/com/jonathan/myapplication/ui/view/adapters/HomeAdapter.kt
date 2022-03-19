@@ -5,14 +5,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.jonathan.myapplication.data.model.Movie
+import com.jonathan.myapplication.data.model.Movies
 import com.jonathan.myapplication.databinding.ItemMoviesBinding
 
-class HomeAdapter(private val recyclerViewHome: RecyclerViewHomeClickListener) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
+class HomeAdapter(private val recyclerViewHome: RecyclerViewHomeClickListener) :
+    RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
     private lateinit var recyclerView: RecyclerView
 
-    var items: List<Movie> = ArrayList()
+    var items: List<Movies> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
         return HomeViewHolder(
@@ -45,7 +46,7 @@ class HomeAdapter(private val recyclerViewHome: RecyclerViewHomeClickListener) :
         return items.size
     }
 
-    fun submitList(itemList: List<Movie>){
+    fun submitList(itemList: List<Movies>) {
         items = itemList
         notifyDataSetChanged()
     }
@@ -57,9 +58,10 @@ class HomeAdapter(private val recyclerViewHome: RecyclerViewHomeClickListener) :
 
     private fun isLinearLayoutManager() = recyclerView.layoutManager is LinearLayoutManager
 
-    class HomeViewHolder(private val binding: ItemMoviesBinding) : RecyclerView.ViewHolder(binding.root) {
+    class HomeViewHolder(private val binding: ItemMoviesBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Movie, isLinearLayoutManager: Boolean) {
+        fun bind(item: Movies, isLinearLayoutManager: Boolean) {
             binding.apply {
                 doc = item
                 executePendingBindings()
@@ -69,5 +71,5 @@ class HomeAdapter(private val recyclerViewHome: RecyclerViewHomeClickListener) :
 }
 
 interface RecyclerViewHomeClickListener {
-    fun clickOnItem(data: Movie, card: View)
+    fun clickOnItem(data: Movies, card: View)
 }

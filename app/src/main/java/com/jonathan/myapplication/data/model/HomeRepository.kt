@@ -16,4 +16,11 @@ class HomeRepository @Inject constructor(
         val popular = retrofitService.getDataFromApi(apikey)
         popular
     }
+
+    /*suspend fun getMovie(apikey: String): List<Response<MoviesResponse>> = withContext(
+        Dispatchers.IO) {
+        val movie = retrofitService.getDataFromDatabase(apikey)
+        movie
+    }*/
+
 }

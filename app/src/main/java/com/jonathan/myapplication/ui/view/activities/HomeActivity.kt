@@ -1,5 +1,6 @@
 package com.jonathan.myapplication.ui.view.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -7,11 +8,12 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jonathan.myapplication.R
-import com.jonathan.myapplication.data.model.Movie
+import com.jonathan.myapplication.data.model.Movies
 import com.jonathan.myapplication.databinding.ActivityHomeBinding
 import com.jonathan.myapplication.ui.view.adapters.HomeAdapter
 import com.jonathan.myapplication.ui.view.adapters.RecyclerViewHomeClickListener
 import com.jonathan.myapplication.ui.viewmodel.HomeViewModel
+import com.jonathan.myapplication.util.Constants.MOVIE_ID
 import com.jonathan.myapplication.util.Resource
 import com.jonathan.myapplication.util.contentView
 import dagger.hilt.android.AndroidEntryPoint
@@ -65,7 +67,9 @@ class HomeActivity : AppCompatActivity(), RecyclerViewHomeClickListener {
         }
     }
 
-    override fun clickOnItem(data: Movie, card: View) {
-        TODO("Not yet implemented")
+    override fun clickOnItem(data: Movies, card: View) {
+        val intent = Intent(this, MovieActivity::class.java)
+        intent.putExtra(MOVIE_ID, "")
+        startActivity(intent)
     }
 }

@@ -29,8 +29,9 @@ class HomeViewModel @Inject constructor(
                 if (hasInternetConnection(context)) {
                     val response = homeRepository.getPopular(apikey)
                     moviePopular.postValue(Resource.Success(response.body()!!))
-                } else
+                } else {
                     moviePopular.postValue(Resource.Error("No Internet Connection"))
+                }
             } catch (ex: Exception) {
                 when (ex) {
                     is IOException -> moviePopular.postValue(Resource.Error("Network Failure " + ex.localizedMessage))
