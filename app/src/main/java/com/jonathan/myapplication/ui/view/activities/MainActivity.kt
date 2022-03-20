@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         animation()
 
+        //TODO NO SE DEBERIA HACER ESTO
         val handler = Handler()
         handler.postDelayed({
             val intent = Intent(this, HomeActivity::class.java)
@@ -28,10 +29,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun animation() {
         binding.lottieAnimationViewSplash.animate().translationY(-1500F).setDuration(1000).startDelay = 2000
-        binding.textViewChatSimpApp.animate().translationYBy(1000F).setDuration(1000).startDelay = 2500
+        binding.textViewMovApp.animate().translationYBy(1000F).setDuration(1000).startDelay = 2500
 
         val animationSlideUp: Animation = AnimationUtils.loadAnimation(this, R.anim.slide_up)
-        binding.textViewChatSimpApp.animation = animationSlideUp
+        binding.textViewMovApp.animation = animationSlideUp
 
         val animationSlideDown: Animation = AnimationUtils.loadAnimation(this, R.anim.slide_down)
         binding.linearLayoutSplash.animation = animationSlideDown

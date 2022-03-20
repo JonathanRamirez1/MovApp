@@ -11,11 +11,11 @@ import javax.inject.Singleton
 class HomeRepository @Inject constructor(
     private val retrofitService: RetrofitService
 ) {
-    suspend fun getPopular(apikey: String): Response<MoviesResponse> = withContext(
+   /* suspend fun getPopular(apikey: String): Response<MoviesResponse> = withContext(
         Dispatchers.IO) {
         val popular = retrofitService.getDataFromApi(apikey)
         popular
-    }
+    }*/
 
     /*suspend fun getMovie(apikey: String): List<Response<MoviesResponse>> = withContext(
         Dispatchers.IO) {

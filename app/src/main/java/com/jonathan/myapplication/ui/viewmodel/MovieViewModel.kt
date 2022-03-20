@@ -1,12 +1,13 @@
 package com.jonathan.myapplication.ui.viewmodel
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import com.jonathan.myapplication.data.model.Movie
 import com.jonathan.myapplication.data.model.MovieRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
 import javax.inject.Inject
 
+@HiltViewModel
 class MovieViewModel @Inject constructor(private val repository: MovieRepository) :
     ViewModel() {
 

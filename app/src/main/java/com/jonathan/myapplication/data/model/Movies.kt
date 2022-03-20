@@ -23,7 +23,7 @@ class Movies() : Parcelable {
 
     @PrimaryKey
     @SerializedName("id")
-    var id: Int? = null
+    var id: Long? = null
 
     @SerializedName("original_title")
     var originalTitle: String? = null
@@ -54,7 +54,7 @@ class Movies() : Parcelable {
         isAdult = parcel.readByte() != 0.toByte()
         overview = parcel.readString()
         releaseDate = parcel.readString()
-        id = parcel.readValue(Int::class.java.classLoader) as? Int
+        id = parcel.readValue(Long::class.java.classLoader) as? Long
         originalTitle = parcel.readString()
         originalLanguage = parcel.readString()
         title = parcel.readString()

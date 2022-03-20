@@ -5,15 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
+import android.widget.Toast
 import androidx.fragment.app.viewModels
-import com.bumptech.glide.Glide
-import com.jonathan.myapplication.R
 import com.jonathan.myapplication.databinding.FragmentMovieBinding
 import com.jonathan.myapplication.ui.viewmodel.MovieViewModel
-import com.jonathan.myapplication.util.Constants.IMAGE_URL
 import com.jonathan.myapplication.util.Constants.MOVIE_ID
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MovieFragment : Fragment() {
 
     private lateinit var binding: FragmentMovieBinding
@@ -29,12 +28,19 @@ class MovieFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val movieId = arguments?.getLong(MOVIE_ID) ?: 0
+        if (movieId == 0L)
+            errorOperation()
 
         movieViewModel.getDetail(movieId).observe(viewLifecycleOwner, { movie ->
             /*Glide.with(this).load(IMAGE_URL + movie.backdrop_path)
                 .into()*/
 
-            binding.materialTextViewHola.text = movie.backdrop_path
+            binding.materialTextViewMovieTitle.text = movie.title
         })
+    }
+
+    private fun errorOperation() {
+        Toast.makeText(context, "Error", Toast.LENGTH_LONG).show()
+        activity?.onBackPressed()
     }
 }

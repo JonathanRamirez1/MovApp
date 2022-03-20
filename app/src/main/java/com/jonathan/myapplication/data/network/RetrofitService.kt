@@ -1,8 +1,8 @@
 package com.jonathan.myapplication.data.network
 
 import com.jonathan.myapplication.data.model.Movie
-import com.jonathan.myapplication.data.model.MoviesResponse
-import retrofit2.Response
+import com.jonathan.myapplication.data.model.MoviesResult
+import com.jonathan.myapplication.util.Constants.API_KEY
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -14,7 +14,9 @@ interface RetrofitService {
     }
 
     @GET("movie/popular")
-    suspend fun getDataFromApi(@Query("api_key") query: String?): Response<MoviesResponse>
+    suspend fun getDataFromApi(
+        @Query("api_key") apiKey: String = API_KEY,
+        @Query("page") page: Int): MoviesResult
 
     @GET("movie/{movie_id}")
     suspend fun getDataFromDatabase(
