@@ -2,4 +2,14 @@
     <string name="app_name">MovApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Splash Screen -->
+    <string name="splash_screen_by">by</string>
+    <string name="splash_screen_author">Jonathan Javier Ramirez</string>
+
+    <!-- Movie -->
+    <string name="movie_overview">Sinopsis</string>
+    <string name="movie_vote_count">Votación</string>
+    <string name="movie_date">Fecha</string>
+    <string name="movie_popularity">Popularidad</string>
 </resources>

@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/akronim"
-            android:text="by"
+            android:text="@string/splash_screen_by"
             android:textColor="@color/colorTextBlack"
             android:textSize="35sp" />
 
@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/akronim"
-            android:text="Jonathan Javier Ramirez"
+            android:text="@string/splash_screen_author"
             android:textAlignment="center"
             android:textColor="@color/colorTextBlack"
             android:textSize="25sp" />
