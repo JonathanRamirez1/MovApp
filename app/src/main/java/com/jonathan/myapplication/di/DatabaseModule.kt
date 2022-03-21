@@ -3,7 +3,7 @@ package com.jonathan.myapplication.di
 import android.app.Application
 import androidx.room.Room
 import com.jonathan.myapplication.data.dao.MovieDao
-import com.jonathan.myapplication.data.dao.MovieDatabase
+import com.jonathan.myapplication.data.database.MovieDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

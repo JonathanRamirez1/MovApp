@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.cachedIn
-import com.jonathan.myapplication.data.model.MoviesRepository
+import com.jonathan.myapplication.data.repository.MoviesRepository
 import com.jonathan.myapplication.data.network.RetrofitService
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

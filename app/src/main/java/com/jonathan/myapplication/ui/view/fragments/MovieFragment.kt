@@ -46,6 +46,12 @@ class MovieFragment : Fragment() {
             binding.materialTextViewDate.text = movie.release_date
             binding.materialTextViewPopularity.text = movie.popularity
         })
+
+        movieViewModel.error.observe(viewLifecycleOwner, { isError ->
+            if (isError) {
+                errorOperation()
+            }
+        })
     }
 
     private fun errorOperation() {

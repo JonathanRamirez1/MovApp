@@ -16,7 +16,8 @@ interface RetrofitService {
     @GET("movie/popular")
     suspend fun getDataFromApi(
         @Query("api_key") apiKey: String = API_KEY,
-        @Query("page") page: Int): MoviesResult
+        @Query("page") page: Int
+    ): MoviesResult
 
     @GET("movie/{movie_id}")
     suspend fun getDataFromDatabase(

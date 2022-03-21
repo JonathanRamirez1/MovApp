@@ -1,4 +1,4 @@
-package com.jonathan.myapplication.data.model
+package com.jonathan.myapplication.data.repository
 
 import com.jonathan.myapplication.data.network.RetrofitService
 import com.jonathan.myapplication.util.Constants.API_KEY
@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 class MovieRepository @Inject constructor(private val api: RetrofitService) {
 
-    fun getMovie(movieId:Long)= flow{
+    fun getMovie(movieId: Long) = flow {
 
         emit(api.getDataFromDatabase(movieId, API_KEY))
 

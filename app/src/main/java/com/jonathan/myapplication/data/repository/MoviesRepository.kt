@@ -1,7 +1,8 @@
-package com.jonathan.myapplication.data.model
+package com.jonathan.myapplication.data.repository
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import com.jonathan.myapplication.data.model.Movies
 import com.jonathan.myapplication.data.network.RetrofitService
 import com.jonathan.myapplication.util.Constants.API_KEY
 import javax.inject.Inject
